@@ -2,6 +2,8 @@
 
 Minimal Blink-compatible backend with two actions: `tip` and `checkout`.
 
+![Checkout Portal](./docs/checkout-portal.png)
+
 - `GET /actions.json` exposes routing rules.
 - `GET /api/actions/tip` returns action metadata and parameters.
 - `POST /api/actions/tip?to=<pubkey>&amount=<sol>` returns an unsigned SOL transfer transaction.
@@ -44,9 +46,14 @@ npm install
 npm run dev -- --host 127.0.0.1 --port 5173
 ```
 
-Open `http://127.0.0.1:5173` and click **Generate Checkout Tx**.
+Open `http://127.0.0.1:5173`, pick an item card, set quantity and wallet, then click **Pay ... SOL**.
 
 The page calls:
 - `GET /actions.json`
 - `GET /api/actions/checkout`
 - `POST /api/actions/checkout?...`
+
+Use **Show Technical Details** to inspect:
+- `actions.json` output
+- checkout metadata + checkout POST response
+- full request/response trace (URL, method, status, headers, body, latency)
