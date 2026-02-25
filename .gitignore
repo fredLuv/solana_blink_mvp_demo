@@ -1,0 +1,12 @@
+# Rust
+/target/
+
+# Local env
+.env
+
+# macOS
+.DS_Store
+
+# Frontend
+frontend-react/node_modules/
+frontend-react/dist/
